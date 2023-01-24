@@ -42,7 +42,7 @@ module.exports = {
   modules: ["@nuxtjs/axios"],
 
   //Подключаем общий файл со стилями.
-  css: ["@/assets/css/main.css"],
+  css: ["@/assets/css/main.css", "~/assets/scss/app.scss"],
 
   //Прописываем путь к бэку для axios
   axios: { baseURL: process.env.BASE_URL },

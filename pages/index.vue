@@ -1,8 +1,8 @@
 <template>
   <main>
-    <h1>Контент главной страницы</h1>
+    <section class="section section-main">
 
-    <p>Базовый шаблон для работы Nuxt в качестве middleware для Express.</p>
+    </section>
   </main>
 </template>
 

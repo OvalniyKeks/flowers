@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-express",
-  "version": "1.0.1",
-  "description": "dergunov.com",
-  "author": "Aleksandr Dergunov",
+  "name": "flowers",
+  "version": "1.0.0",
+  "description": "",
+  "author": "KeksOvalniy",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",

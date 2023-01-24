@@ -1,4 +1,4 @@
-# Nuxt-Express
+# Flowers
 
 Базовый шаблон для работы Nuxt в качестве middleware для Express.
 

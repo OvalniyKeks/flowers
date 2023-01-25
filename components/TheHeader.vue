@@ -9,10 +9,10 @@
     </nav>
     <div class="header-icon">
       <nuxt-link to="#">
-        <img src="../assets/image/register.png" alt="">
+        <img src="~/assets/icon/register.png" alt="">
       </nuxt-link>
       <nuxt-link to="#">
-        <img src="../assets/image/by.png" alt="">
+        <img src="~/assets/icon/by.png" alt="">
       </nuxt-link>
     </div>
   </header>

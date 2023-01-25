@@ -1,8 +1,8 @@
-$color: rgba(255, 255, 255, 0.2);
+$white: #FFFFFF;
 $orange: (rgb(242, 148, 53));
 
 .header {
-  background-color: $color;
+  background-color: $white;
   display: flex;
   justify-content: space-between;
   align-items: center;

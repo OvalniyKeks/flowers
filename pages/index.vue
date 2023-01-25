@@ -2,9 +2,9 @@
   <main>
     <section class="section section-main">
         <div class="section-main__left">
-          <h1>Flowers, what the world needs</h1>
-          Browse between hounders of flowers
-          <button>Browse</button>
+          <h1>Flowers, <br>what the world</br> needs</h1>
+          <div class="section-title">Browse between hounders of flowers</div>
+          <button class="section-button">Browse</button>
         </div>
         <div class="section-main__right">
           <img src="~/assets/image/flower_1.png" alt="">

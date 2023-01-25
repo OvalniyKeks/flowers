@@ -68,7 +68,7 @@ router.post('/create', async (req, res) => {
   const file = req.files
   if (file) {
     file.image.mv('server/uploads/products/' + file.image.name)
-    productObj.image = `http://localhost:5000/${file.image.name}`
+    productObj.image = `http://localhost:3000/${file.image.name}`
   }
 
   for (const key in body) {

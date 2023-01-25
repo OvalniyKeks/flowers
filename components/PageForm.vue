@@ -1,13 +1,29 @@
 <template>
   <div class="form">
-    <div v-for="element in form" :key="element.name" class="form-element">
-      <label :for="element.name">{{ element.label }}</label>
-      <input type="text" v-model="pageToEdit[element.name]" :id="element.name" />
+    <div class="form-element">
+      <div class="form-element__label">Название</div>
+      <input type="text" v-model="form.label">
+    </div>
+    <div class="form-element">
+      <div class="form-element__label">Цена</div>
+      <input type="number" v-model="form.price">
+    </div>
+    <div class="form-element">
+      <div class="form-element__label">Описание</div>
+      <textarea type="text" v-model="form.description"/>
+    </div>
+    <div class="form-element">
+      <div class="form-element__label">Картинка</div>
+      <input type="file" @input="addImage">
+    </div>
+    <div class="form-element">
+      <div class="form-element__label">Рейтинг</div>
+      <input type="text" v-model="form.rating">
     </div>
 
-    <button v-if="this.action === 'create'" @click="createPage">Создать страницу</button>
-    <button v-if="this.action === 'update'" @click="updatePage">Обновить страницу</button>
-    <button v-if="this.action === 'update'" @click="deletePage">Удалить страницу</button>
+    <button v-if="this.action === 'create'" @click="createPage">Создать товар</button>
+    <!-- <button v-if="this.action === 'update'" @click="updatePage">Обновить страницу</button>
+    <button v-if="this.action === 'update'" @click="deletePage">Удалить страницу</button> -->
   </div>
 </template>
 
@@ -22,21 +38,62 @@ export default {
   data() {
     return {
       pageToEdit: {},
-      form: [
-        { name: "url", label: "Адрес страницы URL" },
-        { name: "h1", label: "Заголовок H1" },
-        { name: "title", label: "Title страницы" },
-        { name: "description", label: "Мета-тег Description" },
-        { name: "content", label: "Контент страницы" },
-      ],
+      form: {
+        label: '',
+        description: '',
+        price: '',
+        rating: '',
+        reviews: '',
+        imageFile: null
+      }
     };
   },
   methods: {
+    addImage (event) {
+      this.form.imageFile = event.target.files[0]
+      // const reader = new FileReader()
+      // reader.readAsDataURL(file)
+      // const vm = this
+      // reader.onload = function () {
+      //   vm.form.imageFile = reader.result
+      // }
+    },
+
+    appendFormData (data, fd) {
+      let formData = fd
+      if (!formData) {
+        formData = new FormData()
+      }
+      if (typeof data === 'object') {
+        for (const key in data) {
+          if (Object.hasOwnProperty.call(data, key)) {
+            formData.append(key, data[key])
+          }
+        }
+      }
+      return formData
+    },
+
+    setDataToSend (form) {
+      let data = {
+        label: form.label,
+        price: form.price,
+        description: form.description,
+        rating: form.rating
+      }
+
+      data = this.appendFormData(data)
+
+      data.append('image', form.imageFile)
+
+      return data
+    },
+
     async createPage() {
       try {
         // Создаём новую страницу.
-        await this.$axios.post(`/api/page`, this.pageToEdit);
-        this.$router.push(`/page/${this.pageToEdit.url}`);
+        await this.$axios.post(`/products/create`, this.setDataToSend(this.form));
+        // this.$router.push(`/page/${this.pageToEdit.url}`);
       } catch (err) {
         // Если страница не создана, то в консоль выводим ошибку из бэкенда.
         console.log(err.response.data.message);

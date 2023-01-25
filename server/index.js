@@ -2,8 +2,16 @@ require("dotenv").config();
 
 // Подключаем бэкенд на Express.
 const express = require("express");
+const fileUpload = require('express-fileupload')
+const path = require("path")
+
 const app = express();
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
+app.use(fileUpload({}))
+
+app.use(express.static(__dirname + '/uploads/products'))
 
 // Подключаем Mongoose и делаем коннект к базе данных.
 // Прописываем стандартные настройки Mongoose.
@@ -16,9 +24,8 @@ mongoose.connect(`mongodb://localhost/${process.env.DATABASE}`, {
   useUnifiedTopology: true,
 });
 
-// Подключаем маршруты для управления моделью Page.
-const pageRoutes = require("./routes/page");
-app.use("/api/page", pageRoutes);
+// Route Client
+app.use('/products', require('./routes/product'))
 
 // Подключаем Nuxt в режиме nuxt.render. В этом примере нет отдельного процесса с Nuxt.
 // Nuxt работает в качестве middleware для Express без своего сервера на Connect.

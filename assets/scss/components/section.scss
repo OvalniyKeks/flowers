@@ -1,4 +1,5 @@
 .section {
+  padding: 0 97px;
   h1 {
     font-size: 60px;
   }
@@ -21,7 +22,7 @@
 
   &-main {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 75px;
 
     &__left {

@@ -2,7 +2,7 @@
   <main>
     <section class="section section-main">
       <div class="section-main__left">
-        <h1>Flowers, <br>what the world<br> needs</h1>
+        <h1>Flowers, 🌻<br>what the world<br> needs </h1>
         <div class="section-text">Browse between hounders of flowers</div>
         <button class="section-button">Browse</button>
       </div>
@@ -18,16 +18,33 @@
     <section class="section section-selers">
       <section-title>Best selers</section-title>
       <div class="card-products">
-        <card-product></card-product>
+      <!-- // Компонент карточки продукта, выводится через цикл  -->
+      <card-product
+        v-for="(product, i) in products" :key="i"
+        :product="product"
+      />
       </div>
-      
-
     </section>
   </main>
 </template>
 
 <script>
+
   export default {
+    async asyncData({ $axios, params, error }) {
+      try {
+        // Добавить получение posts и comments 
+          const products = await $axios.$get('/products');
+          return { products };
+      }   catch (e) {
+          error({ statusCode: e.response.status });
+      }
+    },
+    data() {
+    return {
+      products: [],
+    };
+  },
     head() {
       // У всех страниц должны быть title и description.
       let title = "Шаблон Nuxt-Express";

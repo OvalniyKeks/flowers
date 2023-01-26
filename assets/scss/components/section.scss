@@ -1,22 +1,22 @@
 .section {
-    h1 {
-        font-size: 60px;
-    }
+  h1 {
+    font-size: 60px;
+  }
 
-    &-title {
-        font-size: 20px;
-        color: #838383;
-        margin-bottom: 50px;
-    }
+  &-title {
+    font-size: 20px;
+    color: #838383;
+    margin-bottom: 50px;
+  }
 
-    &-button {
-        font-size: 18px;
-        background-color: #FF8F52;
-        width: 103px;
-        border-radius: 5px;
-        border: none;
-        height: 40px;
-    }
+  &-button {
+    font-size: 18px;
+    background-color: #FF8F52;
+    width: 103px;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+  }
 
 
   &-main {
@@ -25,15 +25,15 @@
     margin-top: 75px;
 
     &__left {
-        display: grid;
+      display: grid;
 
     }
 
     &__right {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
 
     }
   }

@@ -2,8 +2,8 @@
   <main>
     <section class="section section-main">
       <div class="section-main__left">
-        <h1>Flowers, <br>what the world</br> needs</h1>
-        <div class="section-title">Browse between hounders of flowers</div>
+        <h1>Flowers, <br>what the world<br> needs</h1>
+        <div class="section-text">Browse between hounders of flowers</div>
         <button class="section-button">Browse</button>
       </div>
       <div class="section-main__right">
@@ -15,11 +15,13 @@
         <img src="~/assets/image/flower_6.png" alt="">
       </div>
     </section>
-    <section class="card card-selers">
-        <h2>Best selers</h2>
-      <div class="card-content">
-
+    <section class="section section-selers">
+      <section-title>Best selers</section-title>
+      <div class="card-products">
+        <card-product></card-product>
       </div>
+      
+
     </section>
   </main>
 </template>

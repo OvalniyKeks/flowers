@@ -3,7 +3,7 @@
     font-size: 60px;
   }
 
-  &-title {
+  &-text {
     font-size: 20px;
     color: #838383;
     margin-bottom: 50px;
@@ -34,6 +34,24 @@
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 20px;
       grid-row-gap: 20px;
+
+    }
+  }
+
+  &-title {
+    display: flex;
+    justify-content: center;
+
+    &__text {
+      font-size: 32px;
+      margin-top: 115px;
+    }
+
+    &__line {
+      background-color: #D9D9D9;
+      height: 4px;
+      width: 150px;
+      margin: 135px 20px 0px 20px;
 
     }
   }

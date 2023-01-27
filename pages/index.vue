@@ -33,7 +33,7 @@
   export default {
     async asyncData({ $axios, params, error }) {
       try {
-        // Добавить получение posts и comments 
+        // Добавить получение posts и comments
           const products = await $axios.$get('/products');
           return { products };
       }   catch (e) {
@@ -41,10 +41,10 @@
       }
     },
     data() {
-    return {
-      products: [],
-    };
-  },
+      return {
+        products: [],
+      };
+    },
     head() {
       // У всех страниц должны быть title и description.
       let title = "Шаблон Nuxt-Express";

@@ -1,6 +1,6 @@
 <template>
   <div class="admin">
-    {{ users }}
+    <nuxt-link to="/admin/posts">Посты</nuxt-link>
   </div>
 </template>
 <script>

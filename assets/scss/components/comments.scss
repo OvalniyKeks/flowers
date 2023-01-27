@@ -1,0 +1,31 @@
+.comments {
+  &-contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    justify-items: center;
+  }
+
+  &-content {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+    max-height: 294px;
+    height: 100%;
+    display: flex;
+    padding: 20px 29px;
+  }
+
+  &-name {
+    font-size: 22px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    color: #000;
+  }
+
+  &-text {
+    color: #838383;
+    margin-left: 16px;
+  }
+}

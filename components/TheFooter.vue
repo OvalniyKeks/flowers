@@ -15,6 +15,13 @@
       <nuxt-link to="#" class="footer-links__info">Block</nuxt-link>
       <nuxt-link to="#" class="footer-links__info">About</nuxt-link>
     </div>
+    <div class="footer-links">
+      <div class="footer-links__name">Links</div>
+      <nuxt-link to="#" class="footer-links__info">Home</nuxt-link>
+      <nuxt-link to="#" class="footer-links__info">Shop</nuxt-link>
+      <nuxt-link to="#" class="footer-links__info">Block</nuxt-link>
+      <nuxt-link to="#" class="footer-links__info">About</nuxt-link>
+    </div>
     <div class="footer-contact">
       <div class="footer-contact__name">Contact</div>
       <div class="footer-contact__addres">

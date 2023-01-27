@@ -8,7 +8,9 @@
         <div class="comments-name">Atena</div>
         i’m buying flower from them every weak, always fresh flowers and beutiful😍🌻... love’em so nuch..keep going
         💯💯
-        <rating-star/>
+        <rating-star
+        :rating="3"
+        />
       </div>
     </div>
 

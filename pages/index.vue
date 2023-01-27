@@ -25,6 +25,16 @@
       />
       </div>
     </section>
+    <section class="section section-posts">
+      <section-title>Latest posts</section-title>
+      <div class="posts-contents">
+        <latest-posts
+          v-for="(post, i) in posts" :key="i"
+          :post="post"
+        />
+      </div>
+
+    </section>
   </main>
 </template>
 
@@ -34,17 +44,19 @@
     async asyncData({ $axios, params, error }) {
       try {
         // Добавить получение posts и comments
+          const posts = await $axios.$get('/posts');
           const products = await $axios.$get('/products');
-          return { products };
+          return { products, posts };
       }   catch (e) {
           error({ statusCode: e.response.status });
       }
     },
     data() {
-      return {
-        products: [],
-      };
-    },
+    return {
+      products: [],
+      posts: [],
+    };
+  },
     head() {
       // У всех страниц должны быть title и description.
       let title = "Шаблон Nuxt-Express";

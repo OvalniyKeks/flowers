@@ -39,7 +39,7 @@ module.exports = {
   router: { prefetchLinks: false },
 
   //Подключаем модуль Axios для выполнения запросов к бэкенду.
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", 'cookie-universal-nuxt'],
 
   //Подключаем общий файл со стилями.
   css: ["@/assets/css/main.css", "~/assets/scss/app.scss"],

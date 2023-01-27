@@ -4,17 +4,17 @@ require("dotenv").config();
 const express = require("express");
 const fileUpload = require('express-fileupload')
 const path = require("path")
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(fileUpload({}))
+app.use(bodyParser.json())
 
 app.use(express.static(__dirname + '/uploads/products'))
 
-// Подключаем Mongoose и делаем коннект к базе данных.
-// Прописываем стандартные настройки Mongoose.
 const mongoose = require("mongoose");
 mongoose.Schema.Types.Boolean.convertToFalse.add("");
 mongoose.connect(`mongodb://localhost/${process.env.DATABASE}`, {
@@ -26,6 +26,12 @@ mongoose.connect(`mongodb://localhost/${process.env.DATABASE}`, {
 
 // Route Client
 app.use('/products', require('./routes/product'))
+
+
+// Route Auth
+app.use('/admin', require('./routes/admin/auth'))
+
+
 
 // Подключаем Nuxt в режиме nuxt.render. В этом примере нет отдельного процесса с Nuxt.
 // Nuxt работает в качестве middleware для Express без своего сервера на Connect.

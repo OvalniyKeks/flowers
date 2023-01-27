@@ -44,7 +44,7 @@
     async asyncData({ $axios, params, error }) {
       try {
         // Добавить получение posts и comments
-          const posts = await $axios.$get('/posts');
+          const posts = await $axios.$get('/products');
           const products = await $axios.$get('/products');
           return { products, posts };
       }   catch (e) {

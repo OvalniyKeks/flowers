@@ -1,7 +1,15 @@
 <template>
   <div class="admin">
-    <nuxt-link to="/admin/posts">Посты</nuxt-link>
-    <nuxt-link to="/admin/comments">Коментарии</nuxt-link>
+    <div class="admin-header">
+      <h1>Админка Flowers Shop</h1>
+    </div>
+    <div class="admin-cards">
+      <admin-card-products/>
+      <admin-card-posts/>
+      <admin-card-comments/>
+    </div>
+    <!-- <nuxt-link to="/admin/posts">Посты</nuxt-link>
+    <nuxt-link to="/admin/comments">Коментарии</nuxt-link> -->
   </div>
 </template>
 <script>
@@ -9,7 +17,13 @@ export default {
   layout: 'admin',
   data() {
     return {
-      users: null
+      users: null,
+      linksHeader: [
+        {
+          link: '/admin/posts',
+          label: 'Посты'
+        },
+      ]
     }
   },
   created () {

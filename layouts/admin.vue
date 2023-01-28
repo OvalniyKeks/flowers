@@ -1,6 +1,8 @@
 <template>
   <div class="layouts layout-admin">
-    <Nuxt />
+    <div class="layout-admin__inner">
+      <Nuxt />
+    </div>
   </div>
 </template>
 <script>

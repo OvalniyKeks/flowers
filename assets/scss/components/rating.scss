@@ -1,0 +1,13 @@
+.rating {
+    margin-top: 15px;
+
+    &-inactive {
+        position: absolute;
+        display: flex;
+    }
+
+    &-active {
+        position: absolute;
+        display: flex;
+    }
+}

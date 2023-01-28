@@ -33,7 +33,13 @@
           :post="post"
         />
       </div>
-
+    </section>
+    <section class="section section-comments">
+      <section-title>Comments</section-title>
+      <the-comments
+      v-for="(comment, i) in comments" :key="i"
+      :comment="comment"
+      />
     </section>
   </main>
 </template>
@@ -44,9 +50,10 @@
     async asyncData({ $axios, params, error }) {
       try {
         // Добавить получение posts и comments
-          const posts = await $axios.$get('/products');
+          const comments = await $axios.$get('/comments')
+          const posts = await $axios.$get('/posts');
           const products = await $axios.$get('/products');
-          return { products, posts };
+          return { products, posts, comments };
       }   catch (e) {
           error({ statusCode: e.response.status });
       }
@@ -55,6 +62,7 @@
     return {
       products: [],
       posts: [],
+      comments: [],
     };
   },
     head() {

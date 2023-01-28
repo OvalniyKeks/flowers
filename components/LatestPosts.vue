@@ -3,29 +3,28 @@
     <div>
       <div class="posts-avatar">
         <div class="posts-avatar__name">
-          <img src="~/assets/image/posts/avatar.png" alt=""><img />
-          <div>Emily</div>
+          <img :src="post.author_image" alt=""/>
+          <div>{{ post.author_name }}</div>
         </div>
-        <div class="posts-avatar__date">2022/22/8</div>
+        <div class="posts-avatar__date">{{ post.createdDate }}</div>
       </div>
       <div class="posts-image">
-        <img src="~/assets/image/posts/post_1.png" alt="">
+        <img :src="post.image" alt="">
       </div>
       <div class="posts-text">
         <div class="posts-text__top">
-          Best flowers for inside home
+          {{ post.label }}
         </div>
         <div class="posts-text__bot">
-          All the flowers are best for your lovly house
-          just get the one you love the most 😊
+          {{ post.description }}
         </div>
       </div>
       <div class="posts-more">
         <div class="posts-more__like">
             <img src="~/assets/icon/like.png" alt="">
-            <div class="posts-more__number">15</div>
+            <div class="posts-more__number">{{ post.likes }}</div>
             <img src="~/assets/icon/eyes.png" alt="">
-            <div>2001</div>
+            <div>{{ post.views }}</div>
         </div>
         <div class="posts-more__text">Read more</div>
       </div>
@@ -36,7 +35,7 @@
 <script>
     export default {
       props:{
-        content: Object
+        post: Object
       }
     }
 </script>

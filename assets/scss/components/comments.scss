@@ -16,6 +16,16 @@
     padding: 20px 29px;
   }
 
+  &-image {
+    width: 58px;
+
+    & img {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+  }
+
   &-name {
     font-size: 22px;
     height: 58px;

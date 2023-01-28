@@ -3,7 +3,7 @@
     <div>
       <div class="posts-avatar">
         <div class="posts-avatar__name">
-          <img :src="post.author_image" alt=""><img />
+          <img :src="post.author_image" alt=""/>
           <div>{{ post.author_name }}</div>
         </div>
         <div class="posts-avatar__date">{{ post.createdDate }}</div>

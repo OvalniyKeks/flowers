@@ -36,10 +36,12 @@
     </section>
     <section class="section section-comments">
       <section-title>Comments</section-title>
-      <the-comments
-      v-for="(comment, i) in comments" :key="i"
-      :comment="comment"
-      />
+      <div class="comments comments-contents">
+        <the-comments
+        v-for="(comment, i) in comments" :key="i"
+        :comment="comment"
+        />
+      </div>
     </section>
   </main>
 </template>

@@ -1,6 +1,7 @@
 <template>
   <div class="admin">
     <nuxt-link to="/admin/posts">Посты</nuxt-link>
+    <nuxt-link to="/admin/comments">Коментарии</nuxt-link>
   </div>
 </template>
 <script>

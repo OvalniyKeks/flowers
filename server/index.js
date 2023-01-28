@@ -14,6 +14,8 @@ app.use(fileUpload({}))
 app.use(bodyParser.json())
 
 app.use(express.static(__dirname + '/uploads/products'))
+app.use(express.static(__dirname + '/uploads/posts'))
+app.use(express.static(__dirname + '/uploads/comments'))
 
 const mongoose = require("mongoose");
 mongoose.Schema.Types.Boolean.convertToFalse.add("");
@@ -27,6 +29,7 @@ mongoose.connect(`mongodb://localhost/${process.env.DATABASE}`, {
 // Route Client
 app.use('/products', require('./routes/product'))
 app.use('/posts', require('./routes/post'))
+app.use('/comments', require('./routes/comment'))
 
 
 // Route Auth

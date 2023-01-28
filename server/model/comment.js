@@ -1,15 +1,6 @@
 const mongoose = require('mongoose')
 
-const postSchema = new mongoose.Schema({
-  label: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  image: {
-    type: String,
-    required: false
-  },
+const commentSchema = new mongoose.Schema({
   author_name: {
     type: String,
     default: 'pop boy'
@@ -22,13 +13,9 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  likes: {
+  rating: {
     type: String,
-    required: false
-  },
-  views: {
-    type: String,
-    required: false
+    required: true
   },
   createdDate: {
     type: Date,
@@ -36,4 +23,4 @@ const postSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Post', postSchema)
+module.exports = mongoose.model('Comment', commentSchema)

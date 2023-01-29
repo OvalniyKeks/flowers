@@ -18,5 +18,11 @@ export default {
       showRegister: false
     }
   },
+  created () {
+    const cookieToken = this.$cookies.get('token')
+    if (cookieToken) {
+      this.$router.push('/admin')
+    }
+  }
 }
 </script>

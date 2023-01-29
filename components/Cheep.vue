@@ -16,10 +16,7 @@
             return {
 			    valueList: ['asc', 'desc']
       },
-      methods {
 
-      }
     }
-
 }
 </script>

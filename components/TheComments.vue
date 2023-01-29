@@ -1,5 +1,4 @@
 <template>
-  <div class="comments comments-contents">
     <div class="comments-content">
       <div class="comments-image">
         <img :src=" comment.author_image " alt="">
@@ -12,8 +11,6 @@
         />
       </div>
     </div>
-
-  </div>
 </template>
 
 <script>

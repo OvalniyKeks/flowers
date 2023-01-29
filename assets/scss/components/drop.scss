@@ -1,0 +1,53 @@
+.aselect {
+  width: 140px;
+
+  .selector {
+    border: 1px solid gainsboro;
+    position: relative;
+    z-index: 1;
+
+    .expanded {
+      transform: rotateZ(180deg) translateY(2px);
+    }
+
+    .label {
+      display: block;
+      padding: 12px;
+      font-size: 18px;
+    }
+  }
+
+  ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    border: 1px solid gainsboro;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+  }
+
+  li {
+    padding: 12px;
+    color: #666;
+
+    &:hover {
+      color: white;
+      background: seagreen;
+    }
+  }
+
+  .current {
+    background: #eaeaea;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+}

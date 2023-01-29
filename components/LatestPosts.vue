@@ -6,7 +6,7 @@
           <img :src="post.author_image" alt=""/>
           <div>{{ post.author_name }}</div>
         </div>
-        <div class="posts-avatar__date">{{ post.createdDate }}</div>
+        <div class="posts-avatar__date">{{ formatDate(post.createdDate) }}</div>
       </div>
       <div class="posts-image">
         <img :src="post.image" alt="">
@@ -36,6 +36,15 @@
     export default {
       props:{
         post: Object
+      },
+      methods: {
+        formatDate(date) {
+         let today = new Date()
+         let now = today.toLocaleDateString('ru',)
+         return now          
+        }
       }
     }
+
+
 </script>

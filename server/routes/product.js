@@ -85,5 +85,46 @@ router.post('/create', async (req, res) => {
   }
 })
 
+router.get("/product/:id", getProduct, async (req, res) => {
+  try {
+    res.status(200).json(res.el);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+router.patch("/product/:id", getProduct, async (req, res) => {
+  try {
+    Object.assign(res.el, req.body);
+
+    const file = req.files
+    if (file) {
+      file.image.mv('server/uploads/products/' + file.image.name)
+      res.el.image = `http://localhost:3000/${file.image.name}`
+    }
+    await res.el.save();
+    res.status(200).json({ message: "Товар обновлен" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+async function getProduct(req, res, next) {
+  try {
+    // Ищем страницу по URL, который указан в строке запроса.
+    const el = await Product.findOne({ _id: req.params.id }).exec();
+    if (el === null) {
+      // Возвращаем 404 ответ сервера, если страница не найдена.
+      return res.status(404).json({ message: "Товара не существует" });
+    } else {
+      // Передаём контент страницы, если URL найден.
+      res.el = el;
+      next();
+    }
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+}
+
 
 module.exports = router

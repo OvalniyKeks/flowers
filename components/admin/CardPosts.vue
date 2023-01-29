@@ -9,7 +9,7 @@
         <div class="admin-card__item" v-for="(item, i) in data" :key="i">
           {{ item.label }}
           <div class="admin-card__item-actions">
-            <div class="admin-card__item-action edit">Редактировать</div>
+            <nuxt-link :to="`/admin/${item._id}`" class="admin-card__item-action edit">Редактировать</nuxt-link>
             <div class="admin-card__item-action delete">Удалить</div>
           </div>
         </div>

@@ -1,15 +1,10 @@
 <template>
   <div class="admin">
-    <div class="admin-header">
-      <h1>Админка Flowers Shop</h1>
-    </div>
     <div class="admin-cards">
       <admin-card-products/>
       <admin-card-posts/>
       <admin-card-comments/>
     </div>
-    <!-- <nuxt-link to="/admin/posts">Посты</nuxt-link>
-    <nuxt-link to="/admin/comments">Коментарии</nuxt-link> -->
   </div>
 </template>
 <script>

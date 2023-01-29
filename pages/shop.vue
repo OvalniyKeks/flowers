@@ -4,7 +4,9 @@
 
       <div class="shop-contents">
 
-        <drop-down/>
+        <drop-down
+          v-model="filterValue"
+        />
 
         <div class="shop-search">
           <form class="shop-search__form" action="">
@@ -15,17 +17,38 @@
           </form>
         </div>
 
-        <div class="shop-cheep">
-            <button class="shop-cheep__button">
-              <img src="~/assets/icon/cheep.png" alt="">
-              Cheep
-            </button>
-        </div>
+        <cheep/>
 
       </div>
     </div>
-    <div>
-
-    </div>
+      <div class="card-products">
+        <card-product
+        v-for="(product, i) in products" :key="i"
+        :product="product"
+        />
+      </div>
   </div>
 </template>
+
+<script>
+  export default {
+
+    async asyncData({ $axios, params, error }) {
+      try {
+        // Добавить получение posts и comments
+          const products = await $axios.$get('/products');
+          return { products };
+      }   catch (e) {
+          error({ statusCode: e.response.status });
+      }
+    },
+
+    data() {
+      return {
+        filterValue: 'Filtering',
+        products: []
+      }
+
+    }
+  }
+</script>

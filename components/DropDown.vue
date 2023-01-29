@@ -1,13 +1,39 @@
 <template>
-    <div class="shop-dropdown">
-          <button class="shop-dropdown__button">
+  <div class="aselect" :data-value="value" :data-list="list">
+	    <div class="selector" @click="toggle()">
+      <div class="label">
             <img src="~/assets/icon/filter.png" alt="">
-            Filtering
-          </button>
-          <div class="shop-dropdown__content">
-            <a href="#">Rose</a>
-            <a href="#">Tulip</a>
-            <a href="#">Lily</a>
-          </div>
-        </div>
+				    <span>{{ value }}</span>
+	        </div>
+	        <div :class="{ hidden : !visible, visible }">
+	            <ul>
+	                <li :class="{ current : item === value }" v-for="item in list" @click="select(item)">{{ item }}</li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
 </template>
+
+<script>
+  export default {
+
+    props:{
+      value: String
+    },
+        
+		data () {
+      return {
+			  list: ["Rose","Lily","Tulip"],
+        visible: false
+      }
+		},
+		methods: {
+			toggle() {
+				this.visible = !this.visible;
+			},
+			select(option) {
+        this.$emit('input', option)
+			}
+		}
+	}
+</script>

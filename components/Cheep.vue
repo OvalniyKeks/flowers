@@ -10,16 +10,16 @@
 </template>
 
 <script>
-    export default {
-
-        data () {
-            return {
-			    valueList: ['asc', 'desc']
-      },
-      methods {
+  export default {
+    data() {
+      return {
+        valueList: ['asc', 'desc']
+      }
+    },
+    methods: {
+      toggleMode () {
 
       }
     }
-
-}
+  }
 </script>

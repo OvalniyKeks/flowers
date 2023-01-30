@@ -5,6 +5,7 @@
     border: 1px solid gainsboro;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 
     .expanded {
       transform: rotateZ(180deg) translateY(2px);

@@ -40,19 +40,4 @@
         }
 
     }
-
-    &-cheep {
-
-        &__button {
-            background-color: white;
-            border: none;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-
-            & img {
-                padding-right: 5px;
-            }
-        }
-    }
 }

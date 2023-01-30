@@ -2,7 +2,7 @@
 
   <div @click="toggleMode" class="shop-cheep">
     <button class="shop-cheep__button">
-      <img src="~/assets/icon/cheep.png" alt="">
+      <img v-bind:class="{ active: isActive }" src="~/assets/icon/cheep.png" alt="">
       Cheep
     </button>
   </div>
@@ -18,14 +18,15 @@
 
     data() {
       return {
+        isActive: false,
         valueList: ['asc', 'desc']
       }
     },
     methods: {
       toggleMode () {
-        let currentSortValue = this.value === 'asc ' ? 'desc' : 'asc'
+        let currentSortValue = this.value === 'asc' ? 'desc' : 'asc'
         this.$emit('input', currentSortValue)
-        console.log('st')
+        this.isActive = true
       }
     }
   }

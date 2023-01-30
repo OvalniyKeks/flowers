@@ -17,7 +17,9 @@
           </form>
         </div>
 
-        <cheep/>
+        <cheep
+          v-model="sortValue"
+        />
 
       </div>
     </div>
@@ -46,6 +48,7 @@
     data() {
       return {
         filterValue: 'Filtering',
+        sortValue: 'asc',
         products: []
       }
 

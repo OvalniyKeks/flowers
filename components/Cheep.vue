@@ -1,6 +1,6 @@
 <template>
 
-  <div class="shop-cheep">
+  <div @click="toggleMode" class="shop-cheep">
     <button class="shop-cheep__button">
       <img src="~/assets/icon/cheep.png" alt="">
       Cheep
@@ -10,15 +10,12 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-    export default {
-
-        data () {
-            return {
-			    valueList: ['asc', 'desc']
-      },
-=======
   export default {
+
+    props:{
+      value: String
+    },
+
     data() {
       return {
         valueList: ['asc', 'desc']
@@ -26,12 +23,10 @@
     },
     methods: {
       toggleMode () {
->>>>>>> e3204a818a2121db1ad2516cbbf66b3b4af755e8
-
+        let currentSortValue = this.value === 'asc ' ? 'desc' : 'asc'
+        this.$emit('input', currentSortValue)
+        console.log('st')
+      }
     }
-<<<<<<< HEAD
-}
-=======
   }
->>>>>>> e3204a818a2121db1ad2516cbbf66b3b4af755e8
 </script>

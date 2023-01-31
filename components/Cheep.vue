@@ -26,7 +26,7 @@
       toggleMode () {
         let currentSortValue = this.value === 'asc' ? 'desc' : 'asc'
         this.$emit('input', currentSortValue)
-        this.isActive = true
+        this.isActive = !this.isActive
       }
     }
   }

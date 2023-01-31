@@ -1,0 +1,22 @@
+.random {
+    background-color: white;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 580px;
+    height: 564px;
+    padding: 23px 28px;
+
+    &-text {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+
+  &-image {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
+  }
+
+}

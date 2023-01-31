@@ -18,7 +18,7 @@
             </svg>
 
         </div>
-        <div class="rating-active">
+        <div v-if="rating" class="rating-active">
             <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"
             v-for="(star, i) in Number(rating)" :key="i"
             >

@@ -38,6 +38,7 @@
   &-price {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &-value {
@@ -45,6 +46,8 @@
   }
 
   &-button {
+    display: flex;
+    align-items: center;
 
     &__favorite {
       background-color: white;
@@ -53,6 +56,11 @@
       border-radius: 5px;
       font-size: 18px;
       padding: 10px;
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      cursor: pointer;
+
 
         & img {
             margin-right: 10px;
@@ -67,11 +75,18 @@
         font-size: 18px;
         padding: 10px;
         min-width: 160px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
 
             & img {
                 margin-right: 10px;
             }
     }
+  }
+
+  &-section {
+    display: flex;
   }
 
 }

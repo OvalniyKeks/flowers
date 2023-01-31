@@ -30,6 +30,7 @@
 
     &__name {
       font-size: 22px;
+      margin-bottom: 10px;
     }
 
     &__text {
@@ -37,6 +38,12 @@
       color: #838383;
       width: 100%;
       max-width: 336px;
+      margin-bottom: 15px;
+    }
+
+    &__rating {
+      margin-bottom: 30px;
+
     }
   }
 }

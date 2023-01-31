@@ -1,0 +1,91 @@
+.login {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  max-width: 976px;
+  justify-content: space-between;
+  margin: 88px 232px;
+
+  &-info {
+    margin: 33px 49px;
+
+    &__icon {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 32px;
+      margin-bottom: 13px;
+
+      & a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+      color: #838383;
+      margin-bottom: 57px;
+    }
+
+    &__username {
+      margin-bottom: 15px;
+
+      & input {
+        font-size: 18px;
+        width: 391px;
+        height: 63px;
+        border-radius: 5px;
+        border-color: #D9D9D9;
+        padding-left: 29px;
+      }
+    }
+
+    &__password {
+      margin-bottom: 20px;
+
+      & input {
+        font-size: 18px;
+        width: 391px;
+        height: 63px;
+        border-radius: 5px;
+        border-color: #D9D9D9;
+        padding-left: 29px;
+
+      }
+    }
+
+    &__radio {
+      color: #838383;
+      font-size: 18px;
+      margin-bottom: 66px;
+
+    &__button {
+      margin-bottom: 73px;
+
+      & button {
+        background-color: #FF8F52;
+        font-size: 20px;
+        color: white;
+        width: 100%;
+        max-width: 391px;
+        height: 57px;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+
+    &__link {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        & a {
+            color: #FF8F52;
+            margin-left: 5px;
+            text-decoration: none;
+        }
+    }
+  }
+}
+}

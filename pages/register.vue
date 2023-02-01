@@ -15,7 +15,7 @@
             <div class="register-info__password">
                 <input type="text" placeholder="Password">
             </div>
-            <div>with registering your accepting our terms and privacy policy</div>
+            <div class="register-info__with">with registering your accepting our <span>terms</span> and <span>privacy policy</span></div>
             <div class="register-info__button">
                 <button>Register</button>
             </div>
